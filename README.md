@@ -1,4 +1,4 @@
-# Task Management API
+# Task Management API                 |                       [![wakatime](https://wakatime.com/badge/user/55f2e7d8-e681-415e-ba87-93dc727f5023/project/050b0e14-ae8e-4b93-b646-f6b18225a89a.svg)](https://wakatime.com/badge/user/55f2e7d8-e681-415e-ba87-93dc727f5023/project/050b0e14-ae8e-4b93-b646-f6b18225a89a)
 
 A simple Trello/Todoist-style API built with FastAPI + SQLModel: users,
 tasks with a status workflow, and a simulated "completion report"
