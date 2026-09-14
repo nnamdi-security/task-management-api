@@ -5,7 +5,7 @@ from sqlmodel import select
 from .database import create_db_and_tables
 from .dependencies import APIKeyDep, PaginationDep, SessionDep
 from .models import Task, TaskCreate, TaskPublic, TaskStaus, TaskUpdate, User, UserCreate, UserPublic, UserPublicWithTasks
-
+from .reports import write_completion_report
 
 
 @asynccontextmanager
@@ -122,6 +122,11 @@ def update_task(task_id: int, task_update: TaskUpdate, session: SessionDep, api_
     session.add(db_task)
     session.commit()
     session.refresh(db_task)
+
+    if db_task.status == TaskStaus.DONE and not was_done_before:
+        background_task.add_task(write_completion_report, db_task.id, db_task.title)
+
+    return db_task
 
 
 
