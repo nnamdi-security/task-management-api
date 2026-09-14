@@ -24,7 +24,7 @@ task-management-api/
 
 ## Architecture
 
-![Architecture diagram](docs/architecture.png)
+![Architecture diagram](docs/architecture.jpg)
 
 Client requests hit the FastAPI app, which resolves the session, API key,
 and pagination dependencies, then reads/writes `User` and `Task` rows via
